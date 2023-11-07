@@ -2,12 +2,12 @@ import { Component } from "react";
 import Header from "./Header";
 import Form from "./Form";
 import TodoList from "./TodoList";
-import Todo from "./Todo";
 import "../styles/App.css";
 
 class App extends Component {
   state = {
     todos: [],
+    showButton: true,
   };
 
   handleClick = (e) => {
@@ -21,6 +21,7 @@ class App extends Component {
         { title: "tarea 6", done: false },
         { title: "tarea 7", done: false },
       ],
+      showButton: false,
     });
   };
 
@@ -31,7 +32,9 @@ class App extends Component {
           <Header counter={this.state.todos.length} />
           <TodoList tasks={this.state.todos} />
           <Form />
-          <button onClick={this.handleClick}>Inicializar</button>
+          {this.state.showButton ? (
+            <button onClick={this.handleClick}>Inicializar</button>
+          ) : null}
         </div>
       </div>
     );
@@ -39,17 +42,3 @@ class App extends Component {
 }
 
 export default App;
-
-// function App() {
-
-//   return (
-//     <div className="wrapper">
-//       <div className="card-frame">
-//       <h1>React App</h1>
-//       </div>
-//     </div>
-//   )
-// }
-
-
-// 1:30:50

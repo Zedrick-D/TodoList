@@ -4,11 +4,12 @@ import "../styles/Header.css";
 const Header = ({ counter = 0 }) => {
   return (
     <div className="encabezado">
+      <br />
       <h1 className="carde-header-title header">
-        {/* {`Hay ${cantidad} tareas por hacer`} */}
         {`Hay ${counter} tareas por hacer`}
-        {/* {props.counter} tareas por hacer */}
       </h1>
+      <br />
+      <br />
     </div>
   );
 };
