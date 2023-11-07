@@ -10,17 +10,24 @@ class Todo extends Component {
       <div
         className={`todo-container ${this.props.done ? "dim-completed" : ""}`}
       >
-        <Checkmark done={this.props.done} />
+        <div onClick={(e) => this.props.toggleFn(e)}>
+          <Checkmark done={this.props.done} />
+        </div>
+
         <p className="list-item">{this.props.title}</p>
-        <button className="delete"> -Save Change </button>
+        <button className="delete" onClick={(e) => this.props.deleteFn(e)}>
+          -Delete
+        </button>
       </div>
     );
   }
 }
 
 Todo.propTypes = {
-  done: PropTypes.bool,
+  done: PropTypes.bool.isRequired,
   title: PropTypes.string.isRequired,
+  toggleFn: PropTypes.func.isRequired,
+  deleteFn: PropTypes.func.isRequired,
 };
 
 Todo.defaultProps = {
