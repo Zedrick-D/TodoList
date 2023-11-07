@@ -1,0 +1,12 @@
+.header {
+    display: inline;
+    text-align: center;    
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.encabezado {
+    background-color: #2a0606;
+    color: white;
+    padding: auto;
+    border-radius-top: 8px;
+ }
